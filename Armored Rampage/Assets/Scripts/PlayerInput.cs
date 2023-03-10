@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 using System;
+=======
+>>>>>>> csaba_branch
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
         GetBodyMovement();
+<<<<<<< HEAD
         GetTurretMovement();
         GetShootingInput();
     }
@@ -26,4 +30,9 @@ public class PlayerInput : MonoBehaviour
     {
         throw new NotImplementedException();
     }
+=======
+        GetTurretMovement;
+        GetShootingInput();
+    }
+>>>>>>> csaba_branch
 }
