@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ public class BasicMovement : MonoBehaviour
 {
 
     public Animator animator;
+    public Transform LaunchOffset;
+    public RocketCollision ProjectilePrefab;
 
     // Update is called once per frame
     void Update()
@@ -18,5 +21,16 @@ public class BasicMovement : MonoBehaviour
 
 
         transform.position = transform.position + movement * Time.deltaTime * 3;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+    }
+
+    private void Shoot()
+    { 
+            Instantiate(ProjectilePrefab, LaunchOffset.position, transform.rotation);
+            Debug.Log("Lõttél");
     }
 }

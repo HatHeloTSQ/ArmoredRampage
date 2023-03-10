@@ -8,7 +8,16 @@ public class CollisionController : MonoBehaviour
     {
         if (collision.gameObject.name == "Elevation")
         {
-            Debug.Log("enter");
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Elevation")
+        {
+            Debug.Log("exit");
+            Application.Quit();
         }
     }
 }
