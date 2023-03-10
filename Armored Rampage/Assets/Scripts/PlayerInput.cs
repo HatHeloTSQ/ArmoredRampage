@@ -6,8 +6,6 @@ public class PlayerInput : MonoBehaviour
 {
     void Update()
     {
-        GetBodyMovement();
-        GetTurretMovement;
-        GetShootingInput();
+
     }
 }
