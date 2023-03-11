@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 215102245}
   - component: {fileID: 215102244}
   - component: {fileID: 215102243}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Elevation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4770,7 +4770,7 @@ GameObject:
   - component: {fileID: 1382884061}
   - component: {fileID: 1382884060}
   - component: {fileID: 1382884059}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
