@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu/MainMenu.unity
+    guid: 225aaac2ddc472a4dbfa3c95e2c92add
+  - enabled: 1
+    path: Assets/Scenes/LevelMenu/LevelSelection.unity
+    guid: 2f4feae0eabbfd4428ca3b7b90b65b1a
+  - enabled: 1
+    path: Assets/ArmoredRampage.unity
+    guid: 0753c0ab6c37d4345b00923eecc43990
   m_configObjects: {}
