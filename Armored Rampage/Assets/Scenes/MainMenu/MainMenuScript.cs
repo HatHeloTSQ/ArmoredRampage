@@ -5,9 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
+    private int menuIndex;
+
+    public int MenuIndex
+    {
+        get { return menuIndex; }
+        set { menuIndex = SceneManager.GetActiveScene().buildIndex; }
+    }
+
     public void PlayButton_MainMenu() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log($"Scene ({MenuIndex+1})  loaded");
+        SceneManager.LoadScene(MenuIndex + 1);
+    }
+
+    public void ExitButton_ExitGame()
+    {
+        Debug.Log("Game exited (exit button pressed)");
+        Application.Quit();
     }
     // Start is called before the first frame update
     void Start()
