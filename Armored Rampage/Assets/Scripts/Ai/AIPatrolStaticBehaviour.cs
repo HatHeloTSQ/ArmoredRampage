@@ -19,22 +19,23 @@ public class AIPatrolStaticBehaviour : AIBehaviour
 
     public override void PerformAction(TankController tank, AiDetector detector)
     {
-        float angle = Vector2.Angle(tank.aimTurret.transform.up, randomDirection);
-        if(currentPatrolDelay <= 0 && (angle < 2))
-        {
-            randomDirection = Random.insideUnitCircle;
-            currentPatrolDelay = patrolDelay;
-        }
-        else
-        {
-            if(currentPatrolDelay > 0)
+            float? angle = Vector2.Angle(tank.aimTurret.transform.up, randomDirection);
+            if (currentPatrolDelay <= 0 && (angle < 2))
             {
-                currentPatrolDelay -= Time.deltaTime;
+                randomDirection = Random.insideUnitCircle;
+                currentPatrolDelay = patrolDelay;
             }
             else
             {
-                tank.HandleTurretMovement((Vector2)tank.aimTurret.transform.position + randomDirection);
+                if (currentPatrolDelay > 0)
+                {
+                    currentPatrolDelay -= Time.deltaTime;
+                }
+                else
+                {
+                    tank.HandleTurretMovement((Vector2)tank.aimTurret.transform.position + randomDirection);
+                }
             }
-        }
+        
     }
 }

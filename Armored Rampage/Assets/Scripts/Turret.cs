@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Turret : MonoBehaviour
 {
@@ -12,6 +13,15 @@ public class Turret : MonoBehaviour
     Collider2D[] tankcolliders;
     public float currentDelay = 0;
 
+
+    public UnityEvent OnShoot, OnCantShoot;
+    public UnityEvent<float> OnRealoading;
+    private void Start()
+    {
+        OnRealoading?.Invoke(currentDelay);
+    }
+
+
     private void Awake()
     {
         tankcolliders = GetComponentsInParent<Collider2D>();
@@ -22,6 +32,8 @@ public class Turret : MonoBehaviour
         if(canShoot == false)
         {
             currentDelay -= Time.deltaTime;
+            OnRealoading?.Invoke(currentDelay);
+
             if(currentDelay <= 0)
             {
                 canShoot = true;
@@ -33,7 +45,7 @@ public class Turret : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Shooting"); 
+        Debug.Log("Shooting");
 
        if (canShoot)
        {
@@ -53,7 +65,11 @@ public class Turret : MonoBehaviour
                     Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), collider);
                 }
             }
-       }
+
+            OnShoot?.Invoke();
+            OnRealoading?.Invoke(currentDelay);
+        }
+        OnCantShoot?.Invoke();
     }
    
 }
