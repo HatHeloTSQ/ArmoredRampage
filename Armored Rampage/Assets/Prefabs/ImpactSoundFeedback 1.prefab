@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1115951077505941694}
   - component: {fileID: 2307924505562583060}
   m_Layer: 8
-  m_Name: ImpactSoundFeedback
+  m_Name: ImpactSoundFeedback 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d40199e9e210bfc47bd07c99b72a1327, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5382e4b47293b034d81870b3729a9dae, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.22
   m_Pitch: 1

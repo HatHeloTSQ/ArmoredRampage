@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - New tag
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
     locked: 0
   - name: SpecialEffects
     uniqueID: 3077764937
+    locked: 0
+  - name: UI
+    uniqueID: 813087683
     locked: 0

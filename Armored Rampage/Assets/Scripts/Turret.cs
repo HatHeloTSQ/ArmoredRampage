@@ -45,8 +45,6 @@ public class Turret : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Shooting");
-
        if (canShoot)
        {
             canShoot = false;
