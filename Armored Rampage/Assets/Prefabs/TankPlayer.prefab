@@ -106,6 +106,14 @@ PrefabInstance:
       propertyPath: reloadDelay
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 6011887288893055085, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011887288905536998, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6011887288905536999, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: maxSpeed
       value: 250
@@ -209,6 +217,10 @@ PrefabInstance:
     - target: {fileID: 8671575452067689162, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218479964880733123, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}

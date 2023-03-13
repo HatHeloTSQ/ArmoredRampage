@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ffcee56b1861dd458761d168a92e982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 5.5
+  viewRadius: 2.7
   detectionCheckDelay: 1
   target: {fileID: 0}
   playerLayerMask:
@@ -82,7 +82,7 @@ Transform:
   m_GameObject: {fileID: 2270330055733285480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.28, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5543744822771979900}
@@ -147,6 +147,14 @@ PrefabInstance:
     - target: {fileID: 6011887288893055082, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: reloadDelay
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011887288893055085, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011887288905536998, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6011887289244755518, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: m_RootOrder
@@ -247,6 +255,10 @@ PrefabInstance:
     - target: {fileID: 8671575452067689162, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: OnDead.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218479964880733123, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
