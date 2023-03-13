@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TankMover : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class TankMover : MonoBehaviour
     public float maxSpeed = 10;
     public float rotationSpeed = 100;
     Vector2 movementVector;
+
+    public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
    
 
     private void Awake()
@@ -25,5 +28,6 @@ public class TankMover : MonoBehaviour
     public void Move(Vector2 movementVector)
     {
         this.movementVector = movementVector;
+        OnSpeedChange?.Invoke(this.movementVector.magnitude);
     }
 }
