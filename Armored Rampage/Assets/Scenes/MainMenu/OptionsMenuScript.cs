@@ -9,7 +9,7 @@ public class OptionsMenuScript : MonoBehaviour
     private Resolution[] resolutions;
     public Dropdown resDropdown;
 
-    //TODO fix resolution menu
+    //TODO fix resolution menu https://www.youtube.com/watch?v=YOaYQrN1oYQ
 
     /*private void Start()
     {

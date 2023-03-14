@@ -22,7 +22,7 @@ public class Level : MonoBehaviour
     public void LevelSelection_LevelSelected(string levelName)
     {
         SceneManager.LoadScene(levelName);
-        
+          
     }
 
     // Start is called before the first frame update
