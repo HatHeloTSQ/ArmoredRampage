@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: reloadDelay
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7501707153847238753, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3247103318552755959, guid: b5b7850af94539b43808c0ab173af643, type: 2}
     - target: {fileID: 8671575452067689162, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: MaxHealth
       value: 300
