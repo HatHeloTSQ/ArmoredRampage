@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ArmoredRampage.unity
     guid: 0753c0ab6c37d4345b00923eecc43990
+  - enabled: 0
+    path: Assets/Scenes/ExperimentLevelsForTransitions/ArmoredRampage 1.unity
+    guid: 6286d0261225ab54bb74189dc656f8f1
+  - enabled: 0
+    path: Assets/Scenes/ExperimentLevelsForTransitions/Level02.unity
+    guid: c72b58f9e1374f14d9dd9d43461131f5
   m_configObjects: {}
