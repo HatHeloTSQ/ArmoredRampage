@@ -52,6 +52,15 @@ public class Turret : MonoBehaviour
 
             foreach (var barrel in turretBarels)
             {
+
+
+                var hit = Physics2D.Raycast(barrel.position, barrel.up);
+                if(hit.collider != null)
+                {
+                    Debug.Log(hit.collider.name);
+                }
+
+
                 GameObject bullet = Instantiate(bulletPrefab);
 
                 bullet.transform.position = barrel.position;
