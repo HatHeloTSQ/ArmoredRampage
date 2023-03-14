@@ -17,14 +17,14 @@ public class BGMusicCarryOverScenes : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)Destroy(this.gameObject);
+        if (instance != null && instance != this) Destroy(this.gameObject);
         else instance = this;
+
         DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
