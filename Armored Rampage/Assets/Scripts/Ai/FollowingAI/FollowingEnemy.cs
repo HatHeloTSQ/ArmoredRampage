@@ -2,57 +2,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowingEnemy : MonoBehaviour
+public class FollowingEnemy : AIBehaviour
 {
     public float speed;
     public float stoppingDistance;
     public float retreatDistance;
-    private float timeBetweenShots;
+    public float timeBetweenShots;
     public float startTimeBetweenShots;
+    public float followDistance;
     public GameObject projectile;
     public GameObject reload;
-
     private Transform player;
+
+    private Rigidbody2D rb2d;
 
     void Start()
     {
+        rb2d = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        timeBetweenShots = startTimeBetweenShots;
+        timeBetweenShots = 0;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player != null)
+        if (player != null)
         {
-            if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            }
+            Vector3 direction = player.position - transform.position;
+            float angle = (Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg) - 90;
+            rb2d.rotation = angle;
 
-            else if ((Vector2.Distance(transform.position, player.position) < stoppingDistance) && (Vector2.Distance(transform.position, player.position) > retreatDistance))
+            float distance = Vector2.Distance(transform.position, player.position);
+            if (distance < followDistance)
             {
-                transform.position = this.transform.position;
-            }
+                if (distance > stoppingDistance) 
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                }
 
-            else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, (-speed * Time.deltaTime));
+                else if (distance < stoppingDistance && distance > retreatDistance)
+                {
+                    transform.position = this.transform.position;
+                }
+
+                else if (distance < retreatDistance)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, player.position, (-speed * Time.deltaTime));
+                }
             }
 
             if (timeBetweenShots <= 0)
             {
-                if (projectile == null)
+                if(distance < followDistance)
                 {
-                    projectile = reload;
-                    Instantiate(projectile, transform.position, Quaternion.identity);
-                    timeBetweenShots = startTimeBetweenShots;
-                }
-                else
-                {
-                    Instantiate(projectile, transform.position, Quaternion.identity);
-                    timeBetweenShots = startTimeBetweenShots;
+
+                    if (projectile == null)    
+                    {
+                        projectile = reload;
+                        Instantiate(projectile, transform.position, Quaternion.identity);
+                        timeBetweenShots = startTimeBetweenShots;
+                    }
+                    else
+                    {
+                        Instantiate(projectile, transform.position, Quaternion.identity);
+                        timeBetweenShots = startTimeBetweenShots;
+                    }
                 }
             }
             else
@@ -67,5 +82,11 @@ public class FollowingEnemy : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, stoppingDistance);
         Gizmos.DrawWireSphere(transform.position, retreatDistance);
+        Gizmos.DrawWireSphere(transform.position, followDistance);
+    }
+
+    public override void PerformAction(TankController tank, AiDetector detector)
+    {
+        throw new System.NotImplementedException();
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8505956481617605214}
   - component: {fileID: 1378452805341764791}
-  - component: {fileID: 5007846956591879669}
+  - component: {fileID: 5342470543854080559}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -25,7 +25,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955882414944718966}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.6666665, y: 6.6666665, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33,10 +33,10 @@ RectTransform:
   - {fileID: 4428845055674827002}
   m_Father: {fileID: 4889234781883846168}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.09, y: 0.91}
+  m_AnchoredPosition: {x: 6.45, y: 0.31}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1378452805341764791
@@ -60,7 +60,7 @@ Canvas:
   m_SortingLayerID: 813087683
   m_SortingOrder: 6
   m_TargetDisplay: 0
---- !u!114 &5007846956591879669
+--- !u!114 &5342470543854080559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 955882414944718966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e059e9eef58644386d594c0bcd75fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 56990ab9690fbcf4596d5580063d0624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 4889234781883846168}
@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.45, y: 0.47}
+  m_AnchoredPosition: {x: -0.458, y: 0.462}
   m_SizeDelta: {x: 0.9, y: 0.15}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1871313708405431424
@@ -306,7 +306,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4889234781883846171}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -2.3, y: -2.8, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
@@ -314,7 +314,7 @@ Transform:
   - {fileID: 8505956481617605214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &4889234781883846169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,8 +331,10 @@ MonoBehaviour:
   stoppingDistance: 4
   retreatDistance: 3
   startTimeBetweenShots: 1
+  followDistance: 0
   projectile: {fileID: 8002604146820791500, guid: dde04b87dc31d3a43a66b2b141a91adf, type: 3}
   reload: {fileID: 8053542975247583189, guid: 5d434b77b14d0224da189cd564532ef7, type: 3}
+  player: {fileID: 0}
 --- !u!212 &4889234781883846174
 SpriteRenderer:
   m_ObjectHideFlags: 0
