@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 200
+  damage: 3.4028235e+38
   maxDistance: 10
   Onhit:
     m_PersistentCalls:
