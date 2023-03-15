@@ -36,12 +36,6 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void DisableObject()
-    {
-        rb2d.velocity = Vector2.zero;
-        gameObject.SetActive(false);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Onhit?.Invoke();

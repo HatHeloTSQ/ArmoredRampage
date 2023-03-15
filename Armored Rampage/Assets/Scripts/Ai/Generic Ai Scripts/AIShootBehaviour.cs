@@ -8,7 +8,7 @@ public class AIShootBehaviour : AIBehaviour
 
     public override void PerformAction(TankController tank, AiDetector detector)
     {
-        if (tank != null || detector != null)
+        if (tank != null && detector != null)
         {
             if (TargetInFOV(tank, detector))
             {
@@ -22,7 +22,7 @@ public class AIShootBehaviour : AIBehaviour
 
     private bool TargetInFOV(TankController tank, AiDetector detector)
     {
-        if (tank != null || detector != null)
+        if (tank != null && detector != null)
         {
             var direction = detector.Target.position - tank.aimTurret.transform.position;
             if (Vector2.Angle(tank.aimTurret.transform.up, direction) < fieldOfVisionForShooting)
