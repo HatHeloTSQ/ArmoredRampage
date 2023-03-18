@@ -327,14 +327,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e39f2f351656949a74ac3ecbefd38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 2
   stoppingDistance: 4
   retreatDistance: 3
   timeBetweenShots: 0
   startTimeBetweenShots: 1
-  followDistance: 0
+  followDistance: 7
   projectile: {fileID: 8002604146820791500, guid: dde04b87dc31d3a43a66b2b141a91adf, type: 3}
-  reload: {fileID: 8053542975247583189, guid: 5d434b77b14d0224da189cd564532ef7, type: 3}
+  reload: {fileID: 8002604146820791500, guid: dde04b87dc31d3a43a66b2b141a91adf, type: 3}
 --- !u!212 &4889234781883846174
 SpriteRenderer:
   m_ObjectHideFlags: 0
