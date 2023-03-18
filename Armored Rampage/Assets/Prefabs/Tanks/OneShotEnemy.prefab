@@ -72,9 +72,10 @@ GameObject:
   - component: {fileID: 2826427884275463041}
   - component: {fileID: 2826427884275463046}
   - component: {fileID: 2826427884275463047}
+  - component: {fileID: 7770668951098467350}
   m_Layer: 7
   m_Name: OneShotEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +140,18 @@ MonoBehaviour:
   patrolDelay: 1
   randomDirection: {x: 0, y: 0}
   currentPatrolDelay: 0
+--- !u!114 &7770668951098467350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2826427884275463045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53183b9f40249004ba322bfa5c6efab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2826427884346491288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,6 +1194,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3611292529644261520}
         m_TargetAssemblyTypeName: ObjectGeneratorRandomPositionUtil, Assembly-CSharp
         m_MethodName: CreateObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7770668951098467350}
+        m_TargetAssemblyTypeName: DestroyUtil, Assembly-CSharp
+        m_MethodName: DestoryHelper
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
