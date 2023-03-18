@@ -6,6 +6,8 @@ TagManager:
   tags:
   - New tag
   - Enemy
+  - Pointer
+  - NextLevel
   layers:
   - Default
   - TransparentFX
