@@ -27,6 +27,7 @@ public class TankMover : MonoBehaviour
     private void Awake()
     {
         rb2d = GetComponentInParent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
