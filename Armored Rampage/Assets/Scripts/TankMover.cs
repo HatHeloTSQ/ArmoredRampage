@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,15 @@ public class TankMover : MonoBehaviour
     public float rotationSpeed = 100;
     Vector2 movementVector;
     Vector2 direction;
+    float frameRate;
+
     public List<Sprite> nSprites;
     public List<Sprite> neSprites;
     public List<Sprite> eSprites;
     public List<Sprite> seSprites;
     public List<Sprite> sSprites;
+    float idleTime;
+
     public SpriteRenderer spriteRenderer;
 
     public UnityEvent<float> OnSpeedChange = new UnityEvent<float>();
@@ -27,10 +32,28 @@ public class TankMover : MonoBehaviour
     private void FixedUpdate()
     {
         direction = new Vector2(movementVector.x, movementVector.y).normalized;
-        //direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
         rb2d.velocity = direction * maxSpeed * Time.deltaTime;
 
+        HandleSpriteFlip();
+
+        List<Sprite> directionSprites = GetSpriteDirection();
+
+        if (directionSprites != null)
+        {
+            float playTime = Time.time - idleTime;
+            int frame = (int)((playTime * frameRate) % directionSprites.Count);
+            spriteRenderer.sprite = directionSprites[frame];
+        }
+        else
+        {
+            idleTime = Time.time;
+        }
+        Debug.Log(direction.ToString());
+    }
+
+    private void HandleSpriteFlip()
+    {
         if (!spriteRenderer.flipX && direction.x < 0)
         {
             Debug.Log(direction.x);
@@ -40,6 +63,46 @@ public class TankMover : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+    }
+
+    List<Sprite> GetSpriteDirection()
+    {
+        List<Sprite> selectedSprites = null;
+
+        if (direction.y > 0)
+        {
+            if (Mathf.Abs(direction.x) > 0)
+            {
+                selectedSprites = neSprites;
+            }
+            else
+            {
+                selectedSprites = nSprites;
+            }
+        }
+        else if (direction.y < 0)
+        {
+            if (Mathf.Abs(direction.x) > 0)
+            {
+                selectedSprites = seSprites;
+            }
+            else
+            {
+                selectedSprites = nSprites;
+            }
+        }
+        else
+        {
+            if (Mathf.Abs(direction.x) > 0)
+            {
+                selectedSprites = eSprites;
+            }
+        }
+        if (selectedSprites != null)
+        {
+            return selectedSprites;
+        }
+        else return null;
     }
 
     public void Move(Vector2 movementVector)
