@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedBuff : MonoBehaviour
+public class MaxHPBuff : MonoBehaviour
 {
     public int buffValue;
     public float duration;
@@ -15,7 +15,7 @@ public class SpeedBuff : MonoBehaviour
 
     private IEnumerator ApplyPowerUp(Collider2D collisionObj)
     {
-        collisionObj.GetComponentInChildren<TankMover>().maxSpeed += buffValue;
+        collisionObj.GetComponentInChildren<Damagable>().MaxHealth += buffValue;
 
         this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
