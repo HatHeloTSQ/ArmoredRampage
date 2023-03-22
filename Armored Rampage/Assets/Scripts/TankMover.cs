@@ -42,22 +42,18 @@ public class TankMover : MonoBehaviour
 
         if (directionSprites != null)
         {
-            float playTime = Time.time - idleTime;
-            int frame = (int)((playTime * frameRate) % directionSprites.Count);
-            spriteRenderer.sprite = directionSprites[frame];
+            spriteRenderer.sprite = directionSprites[0];
         }
         else
         {
-            idleTime = Time.time;
+
         }
-        Debug.Log(direction.ToString());
     }
 
     private void HandleSpriteFlip()
     {
         if (!spriteRenderer.flipX && direction.x < 0)
-        {
-            Debug.Log(direction.x);
+        {   
             spriteRenderer.flipX = true;
         }
         else if (spriteRenderer.flipX && direction.x > 0)
@@ -103,7 +99,9 @@ public class TankMover : MonoBehaviour
         {
             return selectedSprites;
         }
-        else return null;
+        return null;
+
+
     }
 
     public void Move(Vector2 movementVector)
