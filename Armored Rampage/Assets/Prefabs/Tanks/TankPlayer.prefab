@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2473200844998043316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.212, y: -2.694, z: -0.09254558}
+  m_LocalPosition: {x: 0.196, y: -2.628, z: -0.09254558}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1.0354}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83215db42010e194688e630ea7682e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisLevelIndex: 0
 --- !u!1001 &8159414989991652627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,6 +208,14 @@ PrefabInstance:
     - target: {fileID: 6011887289671915669, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: reloadDelay
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011887290678269044, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011887290678269044, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.81
       objectReference: {fileID: 0}
     - target: {fileID: 7501707153847238753, guid: a5d8035fe294cc844831daa408ad5aac, type: 3}
       propertyPath: OutputAudioMixerGroup
