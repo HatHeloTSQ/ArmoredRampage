@@ -1,17 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="PowerUps/Speed")]
-public class SpeedBuff : PowerUpBaseScript
+public class SpeedBuff : MonoBehaviour
 {
-    public float moveSpeedAmount;
-    public float rotaSpeedAmount;
+    public int buffValue;
+    public float duration;
 
-    public override void ApplyPowerUp(GameObject gameObject)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.GetComponent<TankMover>().maxSpeed += moveSpeedAmount;
-        gameObject.GetComponent<TankMover>().rotationSpeed += rotaSpeedAmount;
+        if (collision.CompareTag("Player")) StartCoroutine(ApplyPowerUp(collision));
     }
+
+    private IEnumerator ApplyPowerUp(Collider2D collisionObj)
+    {
+        collisionObj.GetComponentInChildren<TankMover>().maxSpeed += buffValue;
+
+        this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+
+        yield return new WaitForSeconds(duration);
+
+        collisionObj.GetComponentInChildren<TankMover>().maxSpeed -= buffValue;
+        Destroy(this.gameObject);
+
+    }
+
 }
- 
